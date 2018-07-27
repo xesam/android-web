@@ -5,29 +5,29 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class DefaultWebView {
+public class WebBuilder {
     private WebView mWebView;
 
-    public DefaultWebView(WebView webView) {
+    public WebBuilder(WebView webView) {
         mWebView = webView;
     }
 
-    public DefaultWebView webviewClient(WebViewClient client) {
+    public WebBuilder webviewClient(WebViewClient client) {
         mWebView.setWebViewClient(client);
         return this;
     }
 
-    public DefaultWebView webChromeClient(WebChromeClient client) {
+    public WebBuilder webChromeClient(WebChromeClient client) {
         mWebView.setWebChromeClient(client);
         return this;
     }
 
-    public DefaultWebView initSettings(SettingInitializer initializer) {
+    public WebBuilder initSettings(SettingInitializer initializer) {
         initializer.init(mWebView.getContext(), mWebView.getSettings());
         return this;
     }
 
-    public DefaultWebView debug(boolean debug) {
+    public WebBuilder debug(boolean debug) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && debug) {
             WebView.setWebContentsDebuggingEnabled(true);
         }

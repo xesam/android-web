@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<script type="text/javascript">
+    function disp_alert(){
+        alert("请输入您的名字")
+    }
+    function disp_prompt(){
+        var name=prompt("请输入您的名字","Bill Gates")
+        if (name!=null && name!=""){
+            document.getElementById('prompt_result').value = name;
+        }
+    }
+</script>
+</head>
+<body>
+
+<div>
+    <input type="button" onclick="disp_alert()" value="显示一个警告" />
+    <input type="text" id="alert_result" />
+</div>
+
+<div>
+    <input type="button" onclick="disp_prompt()" value="显示一个提示框" />
+    <input type="text" id="prompt_result" />
+</div>
+</body>
+</html>
