@@ -42,6 +42,6 @@ public class DefaultWebChromeClient extends WebChromeClient {
     }
 
     private String buildConsoleMessage(ConsoleMessage message) {
-        return message.lineNumber() + ";" + message.sourceId() + ";" + message.message();
+        return message.sourceId() + "[" + message.lineNumber() + "] --> " + message.message();
     }
 }
