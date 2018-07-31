@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
 import io.github.xesam.web.shell.DefaultSettingInitializer;
-import io.github.xesam.web.shell.WebBuilder;
+import io.github.xesam.web.shell.DefaultWebChromeClient;
 import io.github.xesam.web.shell.DefaultWebViewClient;
+import io.github.xesam.web.shell.WebBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         new WebBuilder(vWeb)
                 .initSettings(new DefaultSettingInitializer())
                 .webviewClient(new DefaultWebViewClient())
-                .webChromeClient(new WebChromeClient() {
+                .webChromeClient(new DefaultWebChromeClient() {
                     @Override
                     public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
                         Log.e("onJsPrompt", url);
