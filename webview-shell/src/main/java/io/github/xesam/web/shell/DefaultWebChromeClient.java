@@ -15,7 +15,6 @@ public class DefaultWebChromeClient extends WebChromeClient {
     @Override
     public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
         if (consoleMessage != null) {
-            Log.d("DefaultWebChromeClient", "");
             ConsoleMessage.MessageLevel messageLevel = consoleMessage.messageLevel();
             String tag = "DefaultWebChromeClient";
             String msg = buildConsoleMessage(consoleMessage);
